@@ -1,19 +1,3 @@
-<script setup lang="ts">
-defineOptions({
-  name: 'IndexPage',
-})
-const user = useUserStore()
-const name = ref(user.savedName)
-
-const router = useRouter()
-function go() {
-  if (name.value)
-    router.push(`/hi/${encodeURIComponent(name.value)}`)
-}
-
-const { t } = useI18n()
-</script>
-
 <template>
   <div>
     <div text-4xl>
@@ -40,7 +24,9 @@ const { t } = useI18n()
 
     <div>
       <button
-        m-3 text-sm btn
+        m-3
+        text-sm
+        btn
         :disabled="!name"
         @click="go"
       >
@@ -49,6 +35,22 @@ const { t } = useI18n()
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+defineOptions({
+  name: 'IndexPage',
+})
+const user = useUserStore()
+const name = ref(user.savedName)
+
+const router = useRouter()
+function go() {
+  if (name.value)
+    router.push(`/hi/${encodeURIComponent(name.value)}`)
+}
+
+const { t } = useI18n()
+</script>
 
 <route lang="yaml">
 meta:

@@ -1,14 +1,3 @@
-<script setup lang="ts">
-const router = useRouter()
-const route = useRoute('/hi/[name]')
-const user = useUserStore()
-const { t } = useI18n()
-
-watchEffect(() => {
-  user.setNewName(route.params.name)
-})
-</script>
-
 <template>
   <div>
     <div text-4xl>
@@ -37,7 +26,9 @@ watchEffect(() => {
 
     <div>
       <button
-        m="3 t6" text-sm btn
+        m="3 t6"
+        text-sm
+        btn
         @click="router.back()"
       >
         {{ t('button.back') }}
@@ -45,3 +36,14 @@ watchEffect(() => {
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+const router = useRouter()
+const route = useRoute('/hi/[name]')
+const user = useUserStore()
+const { t } = useI18n()
+
+watchEffect(() => {
+  user.setNewName(route.params.name)
+})
+</script>

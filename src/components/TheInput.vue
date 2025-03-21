@@ -1,9 +1,3 @@
-<script setup lang="ts">
-const { modelValue } = defineModels<{
-  modelValue: string
-}>()
-</script>
-
 <template>
   <input
     id="input"
@@ -18,3 +12,9 @@ const { modelValue } = defineModels<{
     outline="none active:none"
   >
 </template>
+
+<script setup lang="ts">
+const { modelValue } = defineModels<{
+  modelValue: string
+}>()
+</script>
