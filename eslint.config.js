@@ -66,6 +66,7 @@ const eslintObj = antfu(
           max: 1,
         },
       }],
+      'curly': ['error', 'all'],
       'vue/html-self-closing': 'off',
     },
   },
